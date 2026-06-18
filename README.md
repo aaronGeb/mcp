@@ -37,14 +37,14 @@ cd mcp
 ```bash
 uv venv --python 3.12
 source .venv/bin/activate
-uv pip install -r requirements.txt   # or: uv sync if using pyproject.toml
+ uv sync
 ```
 
 **3. Set up environment variables:**
 
 ```bash
-cp .env.example .env
-# optionally set MCP_PORT in .env (default: 3000)
+.env
+# set MCP_PORT in .env (default: 3000)
 ```
 
 **4. Run the server:**
@@ -66,7 +66,6 @@ The server starts on `http://127.0.0.1:3000` (SSE transport).
 **With the FastMCP test client:**
 
 ```python
-# test_server.py
 import asyncio
 from fastmcp import Client
 
@@ -121,7 +120,7 @@ mcp/
 ├── test_server.py
 ├── assets/
 │   └── weather_demo.png
-├── .env.example
+├── .env
 ├── .gitignore
 └── pyproject.toml
 ```
